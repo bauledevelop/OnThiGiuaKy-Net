@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Numerics;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
+using Ontap.Data;
 
 namespace Ontap.Data
 {
@@ -14,11 +14,14 @@ namespace Ontap.Data
         {
         }
 
-        public DbSet<Ontap.Data.SanVanDong> SanVanDong { get; set; } = default!;
         public DbSet<Ontap.Data.ViTri> ViTri { get; set; } = default!;
-        public DbSet<Ontap.Data.CauThu> CauThu { get; set; } = default!;
-        public DbSet<Ontap.Data.TranDau> TranDau { get; set; } = default!;
-        public DbSet<Ontap.Data.DoiBong> DoiBong { get; set; } = default!;
-        
+
+        public DbSet<Ontap.Data.DoiBong> DoiBong { get; set; }
+
+        public DbSet<Ontap.Data.SanVanDong> SanVanDong { get; set; }
+
+        public DbSet<Ontap.Data.TranDau> TranDau { get; set; }
+
+        public DbSet<Ontap.Data.CauThu> CauThu { get; set; }
     }
 }

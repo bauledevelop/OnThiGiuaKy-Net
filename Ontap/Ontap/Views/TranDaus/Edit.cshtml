@@ -1,0 +1,44 @@
+﻿@model Ontap.Data.TranDau
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>TranDau</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="MaTranDau" />
+            <div class="form-group">
+                <label asp-for="MaDoiBong1" class="control-label"></label>
+                <select asp-for="MaDoiBong1" class="form-control" asp-items="ViewBag.MaDoiBong1"></select>
+                <span asp-validation-for="MaDoiBong1" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MaDoiBong2" class="control-label"></label>
+                <select asp-for="MaDoiBong2" class="form-control" asp-items="ViewBag.MaDoiBong2"></select>
+                <span asp-validation-for="MaDoiBong2" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MaSan" class="control-label"></label>
+                <select asp-for="MaSan" class="form-control" asp-items="ViewBag.MaSan"></select>
+                <span asp-validation-for="MaSan" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

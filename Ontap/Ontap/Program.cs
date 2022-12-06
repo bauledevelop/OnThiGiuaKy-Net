@@ -4,7 +4,6 @@ using Ontap.Data;
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<OntapContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("OntapContext") ?? throw new InvalidOperationException("Connection string 'OntapContext' not found.")));
-
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 

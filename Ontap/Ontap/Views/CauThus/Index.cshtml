@@ -1,0 +1,53 @@
+﻿@model IEnumerable<Ontap.Data.CauThu>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.TenCauThu)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Soao)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ViTri)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DoiBong)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.TenCauThu)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Soao)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ViTri.TenViTri)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DoiBong.MaDoiBong)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.MaCauThu">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.MaCauThu">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.MaCauThu">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

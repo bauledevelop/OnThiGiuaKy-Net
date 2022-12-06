@@ -1,0 +1,36 @@
+﻿@model Ontap.Data.TranDau
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>TranDau</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.DoiBong1)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.DoiBong1.MaDoiBong)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.DoiBong2)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.DoiBong2.MaDoiBong)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.SanVanDong)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.SanVanDong.MaSan)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.MaTranDau">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

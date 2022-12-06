@@ -8,6 +8,7 @@ namespace Ontap.Data
     {
         [Key]
         public int ID { set; get; }
+        [Required]
         public string Name { set; get; }
 
         

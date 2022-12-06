@@ -12,9 +12,9 @@ namespace Ontap.Data
         public long First { set; get; }
         public long Last { set; get; }
         public long IDStadium { set; get; }
-
+ 
         [ForeignKey("IDStadium")]
-        public virtual Stadium Stadium { set; get; }
-        
+        public int StadiumID { get; set; }
+        public Stadium Stadium { get; set; }
     }
 }

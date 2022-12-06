@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Ontap.Data;
 
@@ -10,9 +11,10 @@ using Ontap.Data;
 namespace Ontap.Migrations
 {
     [DbContext(typeof(OntapContext))]
-    partial class OntapContextModelSnapshot : ModelSnapshot
+    [Migration("20221206153539_baule33")]
+    partial class baule33
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -38,15 +40,9 @@ namespace Ontap.Migrations
                     b.Property<long>("Last")
                         .HasColumnType("bigint");
 
-                    b.Property<int>("StadiumID")
-                        .HasColumnType("int");
-
-                    b.Property<long>("StadiumID1")
-                        .HasColumnType("bigint");
-
                     b.HasKey("ID");
 
-                    b.HasIndex("StadiumID1");
+                    b.HasIndex("IDStadium");
 
                     b.ToTable("Matche");
                 });
@@ -70,15 +66,12 @@ namespace Ontap.Migrations
                     b.Property<int>("Number")
                         .HasColumnType("int");
 
-                    b.Property<long>("TeamID")
-                        .HasColumnType("bigint");
-
                     b.Property<int>("Type")
                         .HasColumnType("int");
 
                     b.HasKey("ID");
 
-                    b.HasIndex("TeamID");
+                    b.HasIndex("IDTeam");
 
                     b.ToTable("Player");
                 });
@@ -140,7 +133,7 @@ namespace Ontap.Migrations
                 {
                     b.HasOne("Ontap.Data.Stadium", "Stadium")
                         .WithMany("Matches")
-                        .HasForeignKey("StadiumID1")
+                        .HasForeignKey("IDStadium")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -151,7 +144,7 @@ namespace Ontap.Migrations
                 {
                     b.HasOne("Ontap.Data.Team", "Team")
                         .WithMany("Players")
-                        .HasForeignKey("TeamID")
+                        .HasForeignKey("IDTeam")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 

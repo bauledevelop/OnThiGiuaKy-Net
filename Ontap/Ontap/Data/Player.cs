@@ -7,7 +7,6 @@ namespace Ontap.Data
     public class Player
     {
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public long ID { set; get; }
         [Column(TypeName = "nvarchar")]
         [MaxLength(1024)]
@@ -15,7 +14,9 @@ namespace Ontap.Data
         public int Type { set; get; }
         public int Number { set; get; }
         public long IDTeam { set; get; }
+      
         [ForeignKey("IDTeam")]
-        public virtual Team Team { set; get; }
+        public long TeamID { get; set; }
+        public Team Team { get; set; }
     }
 }

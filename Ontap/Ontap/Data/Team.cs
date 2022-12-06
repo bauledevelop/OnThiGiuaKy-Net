@@ -7,11 +7,10 @@ namespace Ontap.Data
     public class Team
     {
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public long ID { set; get; }
         [Column(TypeName = "nvarchar")]
         [MaxLength(1024)]
         public string Name { set; get; }
-        public virtual ICollection<Player> Players { get; set; }
+        public ICollection<Player> Players { get; set; }
     }
 }

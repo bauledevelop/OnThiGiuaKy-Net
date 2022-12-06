@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Ontap.Data;
 
@@ -10,9 +11,10 @@ using Ontap.Data;
 namespace Ontap.Migrations
 {
     [DbContext(typeof(OntapContext))]
-    partial class OntapContextModelSnapshot : ModelSnapshot
+    [Migration("20221206152015_bauletest")]
+    partial class bauletest
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

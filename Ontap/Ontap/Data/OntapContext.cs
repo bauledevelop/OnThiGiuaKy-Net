@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Numerics;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 
@@ -13,10 +14,11 @@ namespace Ontap.Data
         {
         }
 
-        public DbSet<Ontap.Data.Player> Players { get; set; } = default!;
-        public DbSet<Ontap.Data.Match> Matches { get; set; }  
-        public DbSet<Ontap.Data.Team> Teams { get; set; } 
-        public DbSet<Ontap.Data.Stadium> Stadiums { get; set; }
-        public DbSet<Ontap.Data.Product> Products { get; set; }
+        public DbSet<Ontap.Data.SanVanDong> SanVanDong { get; set; } = default!;
+        public DbSet<Ontap.Data.ViTri> ViTri { get; set; } = default!;
+        public DbSet<Ontap.Data.CauThu> CauThu { get; set; } = default!;
+        public DbSet<Ontap.Data.TranDau> TranDau { get; set; } = default!;
+        public DbSet<Ontap.Data.DoiBong> DoiBong { get; set; } = default!;
+        
     }
 }

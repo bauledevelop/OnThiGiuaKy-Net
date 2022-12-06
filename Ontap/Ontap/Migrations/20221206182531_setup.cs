@@ -53,8 +53,8 @@ namespace Ontap.Migrations
                 {
                     MaTranDau = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    MaDoiBong1 = table.Column<int>(type: "int", nullable: false),
-                    MaDoiBong2 = table.Column<int>(type: "int", nullable: false),
+                    MaDoiBong1 = table.Column<int>(type: "int", nullable: true),
+                    MaDoiBong2 = table.Column<int>(type: "int", nullable: true),
                     MaSan = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
@@ -64,14 +64,12 @@ namespace Ontap.Migrations
                         name: "FK_TranDau_DoiBong_MaDoiBong1",
                         column: x => x.MaDoiBong1,
                         principalTable: "DoiBong",
-                        principalColumn: "MaDoiBong",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "MaDoiBong");
                     table.ForeignKey(
                         name: "FK_TranDau_DoiBong_MaDoiBong2",
                         column: x => x.MaDoiBong2,
                         principalTable: "DoiBong",
-                        principalColumn: "MaDoiBong",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "MaDoiBong");
                     table.ForeignKey(
                         name: "FK_TranDau_SanVanDong_MaSan",
                         column: x => x.MaSan,
